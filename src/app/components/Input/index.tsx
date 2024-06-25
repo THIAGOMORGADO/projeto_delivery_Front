@@ -37,9 +37,9 @@ export const InputField = ({color, placeholder, value, onChange, password, class
 
 {
           password && 
-          <div  className="ml-3" onClick={toggleShowPassword}>
-            {showPassword && <Eye size={32} /> }
-            {!showPassword && <EyeClosed size={32} /> }
+          <div  className="ml-3 " onClick={toggleShowPassword}>
+            {showPassword && <Eye size={32} color='#64748b'/> }
+            {!showPassword && <EyeClosed size={32} color='#64748b' /> }
           </div>
         }
      

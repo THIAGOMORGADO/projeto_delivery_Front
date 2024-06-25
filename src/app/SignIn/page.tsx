@@ -30,7 +30,7 @@ const SignIn: React.FC = () => {
     <div className='w-full h-screen '>
       <Header onClick={() => alert("AAaa")}/>
       <div className="mt-2 flex flex-col items-center ">
-        <h1 className='mb-[40px] font-bold text-2xl'>Delivery</h1>
+        <h1 className='mb-[40px] font-bold text-2xl text-[#64748b]'>Delivery</h1>
         <p className='w-[50%] text-center font-normal text-[18px] text-slate-400'>Use suas credenciais para realizar o login.</p>
       </div>
       <div className="flex items-center justify-center mt-[40px]">
