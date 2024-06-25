@@ -6,6 +6,7 @@ import {InputField} from '../components/Input';
 import { Eye, GoogleLogo } from '@phosphor-icons/react';
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 
 // import { Container } from './styles';
 
@@ -15,8 +16,14 @@ const SignIn: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState<any>('');
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
+  const router = useRouter();
+
+  // const togglePasswordVisibility = () => {
+  //   setPasswordVisible(!passwordVisible);
+  // }
+
+  const handleForgotPassword = () => {
+    router.push('/forgot-password')
   }
 
   return(
@@ -68,7 +75,7 @@ const SignIn: React.FC = () => {
         </div>
 
         <div className="flex justify-center items-center mt-[20px]">
-          <p>Esqueceu sua senha ? <span className='text-slate-600 font-bold' onClick={() => {alert("Ai Ai AI")}}>Clique aqui</span></p>
+          <p>Esqueceu sua senha ? <span className='text-slate-600 font-bold cursor-pointer' onClick={handleForgotPassword}>Clique aqui</span></p>
         </div>
 
         <div className="mt-[26px] flex flex-col items-center justify-center gap-3 ">
