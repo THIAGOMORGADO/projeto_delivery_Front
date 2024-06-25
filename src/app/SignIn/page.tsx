@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Divider from '../components/Divider';
 import {InputField} from '../components/Input';
-import { Eye } from '@phosphor-icons/react';
+import { Eye, GoogleLogo } from '@phosphor-icons/react';
+
+import Link from 'next/link'
 
 // import { Container } from './styles';
 
@@ -20,7 +22,7 @@ const SignIn: React.FC = () => {
   return(
     <div className='w-full h-screen '>
       <Header onClick={() => alert("AAaa")}/>
-      <div className="mt-5 flex flex-col items-center ">
+      <div className="mt-2 flex flex-col items-center ">
         <h1 className='mb-[40px] font-bold text-2xl'>Delivery</h1>
         <p className='w-[50%] text-center font-normal text-[18px] text-slate-400'>Use suas credenciais para realizar o login.</p>
       </div>
@@ -44,9 +46,59 @@ const SignIn: React.FC = () => {
             password 
             placeholder='digite sua senha ' 
           />
-          
+         
+        </div>
+        <div className="flex items-center justify-center ">
+          <Link 
+          title='Entra' 
+          href='/home'
+          className='
+          bg-slate-600
+           text-white
+            px-[2rem] 
+            py-[1rem] 
+            rounded-full 
+            w-full 
+            hover:bg-slate-700
+            flex
+            items-center
+            justify-center            
+            '
+          >Login</Link>
+        </div>
+
+        <div className="flex justify-center items-center mt-[20px]">
+          <p>Esqueceu sua senha ? <span className='text-slate-600 font-bold' onClick={() => {alert("Ai Ai AI")}}>Clique aqui</span></p>
+        </div>
+
+        <div className="mt-[26px] flex flex-col items-center justify-center gap-3 ">
+          <p>Entra com sua Conta ? </p>
+
+          <div className="cursor-pointer" onClick={() => {alert("Aqui entra num negocio ")}}>
+            <GoogleLogo size={32} weight="bold" />
+          </div>
+        </div>
+        <div className="flex mt-4 flex justify-center items-center">
+         <Link 
+         href='/home'
+         className='
+         bg-white 
+         text-black 
+         flex
+         items-center
+         justify-center
+         border-2 
+         border-slate-700 
+         mb-10 px-[2rem] 
+         py-[1rem] 
+         rounded-full 
+         w-[50%] hover:bg-slate-700 hover:text-white'>
+          Cadastra-se
+         </Link>
         </div>
       </div>
+
+      
 
 
     </div>
