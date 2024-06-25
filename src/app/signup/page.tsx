@@ -8,6 +8,7 @@ import { Eye, GoogleLogo } from '@phosphor-icons/react';
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
+import Button from '../components/Button';
 
 // import { Container } from './styles';
 
@@ -25,7 +26,7 @@ const signup = () => {
   // }
 
   const handleForgotPassword = () => {
-    router.push('/forgot-password')
+    router.push('/SignIn')
   }
 
   return(
@@ -67,8 +68,8 @@ const signup = () => {
          
         </div>
         <div className="flex items-center justify-center ">
-          <Link 
-          title='Entra' 
+          <Button 
+          title='Cadastra-se' 
           href='/home'
           className='
           bg-slate-600
@@ -82,7 +83,7 @@ const signup = () => {
             items-center
             justify-center            
             '
-          >Cadastra-se</Link>
+          />
         </div>
 
         <div className="flex justify-center items-center mt-[20px]">
@@ -90,7 +91,7 @@ const signup = () => {
             <span 
             className='text-slate-600 font-bold cursor-pointer' 
             onClick={handleForgotPassword}
-            > Fazer Login</span></p>
+            >Fazer Login</span></p>
         </div>
       </div>
 

@@ -14,7 +14,10 @@ const signup: React.FC = () => {
   const router = useRouter();
 
   function handleSubmit() {
-    router.push('/forgot-sucess');
+   
+      router.push('/forgot-sucess');
+    
+    
   }
 
   return(

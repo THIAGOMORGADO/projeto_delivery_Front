@@ -3,13 +3,13 @@ import React from 'react';
 
 type ButtonProps = {
   title: string,
-  
+  href: string,
   className: string
 }
 
-const Button = ({title, className} : ButtonProps) => {
+const Button = ({title, className, href} : ButtonProps) => {
   return(
-    <Link className={className} title={title} href={''}  />
+    <Link className={className} href={href}>{title}</Link>
   );
 }
 

@@ -32,7 +32,7 @@ const forgotSucess: React.FC = () => {
             <button 
             className='bg-slate-500 w-full p-3 rounded-md text-white font-bold'
             onClick={handleSubmit}
-            >Enviar</button>
+            >Fazer Login</button>
            </div>
       </div>
     </div>
