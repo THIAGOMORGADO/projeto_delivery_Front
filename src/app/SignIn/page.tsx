@@ -4,7 +4,8 @@ import Header from '../components/Header';
 import Divider from '../components/Divider';
 import {InputField} from '../components/Input';
 import { Eye, GoogleLogo } from '@phosphor-icons/react';
-import Button from '../components/Button';
+
+import Link from 'next/link'
 
 // import { Container } from './styles';
 
@@ -48,11 +49,22 @@ const SignIn: React.FC = () => {
          
         </div>
         <div className="flex items-center justify-center ">
-          <Button 
+          <Link 
           title='Entra' 
-          className='bg-slate-600 text-white px-[2rem] py-[1rem] rounded-full w-full hover:bg-slate-700'
-          onClick={() => {}}
-          />
+          href='/home'
+          className='
+          bg-slate-600
+           text-white
+            px-[2rem] 
+            py-[1rem] 
+            rounded-full 
+            w-full 
+            hover:bg-slate-700
+            flex
+            items-center
+            justify-center            
+            '
+          >Login</Link>
         </div>
 
         <div className="flex justify-center items-center mt-[20px]">
@@ -67,15 +79,22 @@ const SignIn: React.FC = () => {
           </div>
         </div>
         <div className="flex mt-4 flex justify-center items-center">
-         <Button title='Cadastra-se' className='
+         <Link 
+         href='/home'
+         className='
          bg-white 
          text-black 
+         flex
+         items-center
+         justify-center
          border-2 
          border-slate-700 
          mb-10 px-[2rem] 
          py-[1rem] 
          rounded-full 
-         w-[50%] hover:bg-slate-700 hover:text-white' onClick={() => {}}/>
+         w-[50%] hover:bg-slate-700 hover:text-white'>
+          Cadastra-se
+         </Link>
         </div>
       </div>
 

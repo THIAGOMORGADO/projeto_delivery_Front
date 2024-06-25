@@ -1,16 +1,15 @@
+import Link from 'next/link';
 import React from 'react';
 
 type ButtonProps = {
   title: string,
-  onClick: () => void,
+  
   className: string
 }
 
-const Button = ({title, onClick, className} : ButtonProps) => {
+const Button = ({title, className} : ButtonProps) => {
   return(
-    <button className={className} onClick={onClick}>
-      {title}
-    </button>
+    <Link className={className} title={title} href={''}  />
   );
 }
 
