@@ -80,7 +80,7 @@ const SignIn: React.FC = () => {
         </div>
         <div className="flex mt-4 flex justify-center items-center">
          <Link 
-         href='/home'
+         href='/signup'
          className='
          bg-white 
          text-black 

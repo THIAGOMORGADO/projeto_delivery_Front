@@ -2,7 +2,7 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-const Home: React.FC = () => {
+ const Home = () => {
   return <h1>Ola</h1>;
 }
 
