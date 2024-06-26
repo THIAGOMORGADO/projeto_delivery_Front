@@ -2,7 +2,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { InputField } from '../components/Input';
+import { InputField } from '../../components/Input';
 import { useRouter } from 'next/navigation';
 
 // import { Container } from './styles';

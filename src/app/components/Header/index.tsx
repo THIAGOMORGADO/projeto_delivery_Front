@@ -1,20 +1,18 @@
 import { ArrowCircleLeft } from '@phosphor-icons/react';
+import Link from 'next/link';
 import React from 'react';
 
 type Headerprops = {
   title?: string,
-  onClick: () => void
 }
 
-
-const Header = ({ title, onClick } : Headerprops) => {
+export function Header({ title } : Headerprops){
   return(
     <header className='flex items-center  h-[5rem] px-[2rem]'>
-       <ArrowCircleLeft size={32} color='#64748b' onClick={onClick}/>
-      <h1>{title}</h1>
-     
+      <Link href='/'>
+        <ArrowCircleLeft size={32} color='#64748b'/>
+        <h1>{title}</h1>
+      </Link>
     </header>
   )
 }
-
-export default Header;

@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Divider from '../components/Divider';
-import {InputField} from '../components/Input';
+import { Header } from '../../components/Header';
+import Divider from '../../components/Divider';
+import {InputField} from '../../components/Input';
 import { Eye, GoogleLogo } from '@phosphor-icons/react';
 
 import Link from 'next/link'
@@ -11,10 +10,9 @@ import { useRouter } from 'next/navigation';
 
 // import { Container } from './styles';
 
-const signup = () => {
-  const [nome, setNome] = useState<any>('');
+const SignIn: React.FC = () => {
   const [email, setEmail] = useState<any>('');
-
+  
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState<any>('');
 
@@ -29,12 +27,11 @@ const signup = () => {
   }
 
   return(
-    <div className='w-full h-screen '>
-      <Header onClick={() => alert("AAaa")}/>
+    <div className='w-max-[600px] h-screen '>
+      <Header/>
       <div className="mt-2 flex flex-col items-center ">
-        <h1 className='mb-[40px] font-bold text-2xl'>Delivery</h1>
-        <p className='w-[50%] text-center font-normal text-[18px] text-slate-400'>Preencha os campos 
-        para criar o seu cadastro.</p>
+        <h1 className='mb-[40px] font-bold text-2xl text-[#64748b]'>Delivery</h1>
+        <p className='w-[50%] text-center font-normal text-[18px] text-slate-400'>Use suas credenciais para realizar o login.</p>
       </div>
       <div className="flex items-center justify-center mt-[40px]">
         <Divider />
@@ -43,14 +40,6 @@ const signup = () => {
       {/* Area De input  */}
 
       <div className="mt-[56px] px-[2rem]">
-      <InputField 
-       
-       placeholder="Digite seu nome..." 
-       onChange={setNome}
-       value={nome}
-       />
-
-
         <InputField 
        
         placeholder="Digite seu email..." 
@@ -82,23 +71,45 @@ const signup = () => {
             items-center
             justify-center            
             '
-          >Cadastra-se</Link>
+          >Login</Link>
         </div>
 
         <div className="flex justify-center items-center mt-[20px]">
-          <p>Já tem cadastro ?  
-            <span 
-            className='text-slate-600 font-bold cursor-pointer' 
-            onClick={handleForgotPassword}
-            > Fazer Login</span></p>
+          <p>Esqueceu sua senha ? <span className='text-slate-600 font-bold cursor-pointer' onClick={handleForgotPassword}>Clique aqui</span></p>
+        </div>
+
+        <div className="mt-[26px] flex flex-col items-center justify-center gap-3 ">
+          <p>Entra com sua Conta ? </p>
+
+          <div className="cursor-pointer" onClick={() => {alert("Aqui entra num negocio ")}}>
+            <GoogleLogo size={32} weight="bold" />
+          </div>
+        </div>
+        <div className="flex mt-4 justify-center items-center">
+         <Link 
+         href='/signup'
+         className='
+         bg-white 
+         text-black 
+         flex
+         items-center
+         justify-center
+         border-2 
+         border-slate-700 
+         mb-10 px-[2rem] 
+         py-[1rem] 
+         rounded-full 
+         w-[50%] hover:bg-slate-700 hover:text-white'>
+          Cadastra-se
+         </Link>
         </div>
       </div>
 
-        
+      
 
 
     </div>
   );
 }
 
-export default signup;
+export default SignIn;
