@@ -7,17 +7,14 @@ import { useRouter } from 'next/navigation';
 
 // import { Container } from './styles';
 
-const signup: React.FC = () => {
+const signup = () => {
   
   const [email, setEmail] = useState<any>('');
   
   const router = useRouter();
 
   function handleSubmit() {
-   
-      router.push('/forgot-sucess');
-    
-    
+      router.push('/forgot-sucess')
   }
 
   return(
