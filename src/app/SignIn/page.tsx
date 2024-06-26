@@ -85,7 +85,7 @@ const SignIn: React.FC = () => {
             <GoogleLogo size={32} weight="bold" />
           </div>
         </div>
-        <div className="flex mt-4 flex justify-center items-center">
+        <div className="flex mt-4 justify-center items-center">
          <Link 
          href='/signup'
          className='
