@@ -41,15 +41,10 @@ export default function signin() {
 
   const router = useRouter();
 
-function Notification() {
-  
-}
+
 
  function handleSignIn(data: loginSchemaType) { 
   console.log(data)
-
-  Notification();
-
  }
  
 
@@ -101,7 +96,7 @@ function Notification() {
           <Button
             type="submit"
             title="Entra"
-            onClick={() => {}}
+            
             className="bg-slate-600 text-white rounded-full w-[80%] hover:bg-slate-700 flex items-center justify-center"
           >
           Login
