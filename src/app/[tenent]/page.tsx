@@ -1,7 +1,8 @@
 'use client'
 
-import { SearchInput } from '../components/SearchInput/page';
+import { SearchInput } from './components/SearchInput/page';
 import styles from '../styles/Home.module.css'
+import { Banner } from './components/banner/page';
 
 const Home = () => {
 
@@ -49,6 +50,8 @@ const Home = () => {
                 </div>
 
             </header>
+
+                <Banner/>
             </div>
     )
 }

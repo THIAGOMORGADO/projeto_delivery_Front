@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Divider from '../components/Divider';
-import {InputField} from '../components/Input';
+import Header from './components/Header';
+import Divider from './components/Divider';
+import {InputField} from './components/Input';
 import { Eye, GoogleLogo } from '@phosphor-icons/react';
 
 import Link from 'next/link'
