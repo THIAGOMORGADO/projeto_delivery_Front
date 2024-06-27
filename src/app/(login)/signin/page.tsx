@@ -5,7 +5,7 @@ import { Header } from "../../components/Header";
 import Divider from "../../components/Divider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { Eye, EyeClosed, GoogleLogo } from "@phosphor-icons/react";
 
 import { Button } from "@/components/ui/button";
@@ -21,8 +21,19 @@ export default function signin() {
   const [email, setEmail] = useState<any>("");
   const [password, setPassword] = useState<any>("");
   const [showPassword, setShowPassword] = useState(false);
-
+  
+ 
   type loginSchemaType = z.infer<typeof validationLogin>
+
+  const validationLogin = z.object({
+    email: z.string().min(1, {message: 'E-mail e obrigatorio'}).email('Formato de email invalido'),
+    password: z.string().min(6, 'A senha precisa de 6 caracteres'),
+  })
+
+  const { register, handleSubmit, formState: {errors} } = useForm<loginSchemaType>({
+    resolver: zodResolver(validationLogin)
+  });
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -30,23 +41,26 @@ export default function signin() {
 
   const router = useRouter();
 
-  const validationLogin = z.object({
-    mail: z.string().email(),
-    password: z.string().min(6),
-  })
+function Notification() {
+  
+}
 
- function handleSignIn(data: loginSchemaType) {
-  console.log(data);
+ function handleSignIn(data: loginSchemaType) { 
+  console.log(data)
+
+  Notification();
+
  }
  
- const { register, handleSubmit } = useForm<loginSchemaType>({
-  resolver: zodResolver(validationLogin)
-});
+
 
   return (
+    
     <div className="w-max-[600px] h-screen ">
       <Header />
-      <div className="mt-2 flex flex-col items-center ">
+
+      
+      <div className="flex flex-col items-center ">
         <h1 className="mb-[40px] font-bold text-2xl text-[#64748b]">
           Delivery
         </h1>
@@ -54,33 +68,35 @@ export default function signin() {
           Use suas credenciais para realizar o login.
         </p>
       </div>
-      <div className="flex items-center justify-center mt-[40px]">
+      <div className="flex items-center justify-center mt-[20px]">
         <Divider />
       </div>
-
+      
       
       {/* Comeco do form area de Login  */}
-      <form onSubmit={handleSubmit(handleSignIn)} className="flex flex-col items-center">
-        <div className="mt-[40px] px-[2rem] flex flex-col gap-10 w-full ">
+      <form onSubmit={handleSubmit(handleSignIn)} className="flex flex-col items-center gap-5">
+        <div className="mt-[40px] px-[2rem] flex flex-col  w-full ">
 
           <Input 
             placeholder="Digite seu email" 
-            className="border-none"
-            {...register("mail")}
+            className="border-none mb-4"
+            {...register("email")}
+        
           />
-
-          <div className="flex gap-2 bg-white rounded-md mb-10 ">
+          {errors.email && <span className="text-red-700">{errors.email.message}</span>}
+          <div className="flex gap-2 bg-white rounded-md mb-6 mt-2">
           <Input 
             type={showPassword ? 'text' : 'password'} 
             placeholder="Digite sua senha"  
             className="border-none"
             {...register("password")}
           />
+           
           <button type="button" onClick={togglePasswordVisibility} className="flex items-center justify-between mr-2">
             {showPassword ? <Eye size={32} className="text-slate-600"/> : <EyeClosed size={32} className="text-slate-600"/>}
           </button>
           </div>
-      
+          {errors.password && <span className="text-red-700">{errors.password.message}</span>}
         </div>
           <Button
             type="submit"
@@ -141,5 +157,6 @@ export default function signin() {
         </Link>
       </div>
     </div>
+
   );
 }

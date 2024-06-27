@@ -8,7 +8,7 @@ type Headerprops = {
 
 export function Header({ title } : Headerprops){
   return(
-    <header className='flex items-center  h-[5rem] px-[2rem]'>
+    <header className='flex items-center  h-[5rem]'>
       <Link href='/'>
         <ArrowCircleLeft size={32} color='#64748b'/>
         <h1>{title}</h1>
