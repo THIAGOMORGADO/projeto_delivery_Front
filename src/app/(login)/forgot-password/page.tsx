@@ -7,14 +7,14 @@ import { useRouter } from 'next/navigation';
 
 // import { Container } from './styles';
 
-const signup: React.FC = () => {
+export default function signup() {
   
   const [email, setEmail] = useState<any>('');
   
   const router = useRouter();
 
   function handleSubmit() {
-    router.push('/forgot-sucess');
+    router.push('/validation');
   }
 
   return(
@@ -39,5 +39,3 @@ const signup: React.FC = () => {
     </div>
   );
 }
-
-export default signup;

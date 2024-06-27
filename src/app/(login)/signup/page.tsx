@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 import React, { useState } from 'react';
 import { Header } from '../../components/Header';
@@ -5,6 +6,7 @@ import Divider from '../../components/Divider';
 import {InputField} from '../../components/Input';
 
 import Link from 'next/link'
+import { Button } from '@/components/ui/button';
 
 export default function signup(){
 
@@ -42,9 +44,9 @@ export default function signup(){
           password
         />        
         <div className="flex items-center justify-center">
-          <Link title='Entrar' href='/forgot-password' className='bg-slate-600 text-white rounded-full w-full hover:bg-slate-700 flex items-center justify-center px-[2rem] py-[1rem]'>
+          <Button title='Entrar' onClick={() => {}} className='bg-slate-600 text-white rounded-full w-full hover:bg-slate-700 flex items-center justify-center px-[2rem] py-[1rem]'>
             Cadastra-se
-          </Link>
+          </Button>
         </div>
         <div className="flex justify-center items-center mt-[20px]">
           <p> Já tem cadastro ? 
