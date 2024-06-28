@@ -17,7 +17,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
     <html lang="pt-Br">
      
         <body className={inter.className}>{children}</body>
-     
+        
     </html>
   );
 }

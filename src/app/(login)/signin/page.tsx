@@ -5,11 +5,17 @@ import { Header } from "../../components/Header";
 import Divider from "../../components/Divider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import {signIn} from "next-auth/react"
 
 import SignIn from "@/app/components/FormLogin";
 import { GoogleLogo } from "@phosphor-icons/react";
 
 export default function signin() {
+
+  function handelSignIn() {
+    signIn('github', {callbackUrl: '/components/home'})
+  }
+
   const router = useRouter();
   return (
     
@@ -28,9 +34,7 @@ export default function signin() {
       </div>
       
       <SignIn />
-     
-      <div className="flex items-center justify-center "></div>
-
+    
       <div className="flex justify-center items-center mt-[20px]">
         <p>
           Esqueceu sua senha ?{" "}
@@ -46,13 +50,8 @@ export default function signin() {
       <div className="mt-[26px] flex flex-col items-center justify-center gap-3 ">
         <p>Entra com sua Conta ? </p>
 
-        <div
-          className="cursor-pointer"
-          onClick={() => {
-            alert("Aqui entra num negocio ");
-          }}
-        >
-          <GoogleLogo size={32} weight="bold" />
+        <div className="cursor-pointer">
+          <GoogleLogo size={32} weight="bold" onClick={handelSignIn} />
         </div>
       </div>
 
